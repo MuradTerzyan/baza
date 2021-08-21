@@ -1,0 +1,54 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body id="body"> 
+		<style> 
+            html, body{ 
+                height: 100%; 
+            } 
+            
+            #div{ 
+                width: 44px; 
+                height: 44px; 
+                background: red; 
+                position: absolute; border-radius: 48%; left: 0; top: 0 
+            } 
+		</style> 
+		<div id="div"> </div> 
+        <h4> մեր ստեղծած կլոր - ը կշարժվի նաև ստեղնաշարի սլաքնրով  </h4> 
+		<script> 
+            document.body.addEventListener("mousemove", f14 ) 
+            document.body.addEventListener("keydown", f ) 
+            let div = document.querySelector("#div"); 
+            function f14(e) { 
+                let x = e.clientX + 'px' 
+                let y = e.clientY + 'px'; 
+                div.style.left = x; 
+                div.style.top = y; 
+            } 
+            let a = 0; 
+            let b = 0; 
+            function f( e ) { 
+                if( e.keyCode == 39 ) { 
+                a += 10; 
+                    div.style.left = a + "px" 
+                } 
+                else if( e.keyCode == 37 ) { 
+                    a -= 10; 
+                    div.style.left = a + "px" 
+                } 
+                else if( e.keyCode == 40 ) { 
+                    b += 10; 
+                    div.style.top = b + "px"; 
+                } 
+                else if( e.keyCode == 38 ) { 
+                    b -= 10; 
+                    div.style.top = b + "px" 
+                } 
+            } 
+		</script> 
+	</body>  
+</html> 

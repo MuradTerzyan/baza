@@ -1,0 +1,99 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			.block{ 
+				width: 144px; 
+				height: 44px; 
+				border: 1px solid; margin: 4px, ; float: left; text-align: center; 
+			} 
+			#info{ 
+				width: 414px; 
+/*				height: 214px; */ 
+				position: absolute; 
+				text-align: center; 
+				left: 30%; 
+				top: 30% 
+			} 
+		</style> 
+        <p> պատահական կլինի բոլոր գույները և ամեն մի գույնի վրա սեխմելուց կհայտնվի նոր տեքս </p> 
+		
+		<div class="block" data-id='0'> HTML </div> 
+		<div class="block" data-id='1'> CSS </div>  
+		<div class="block" data-id='2'> JAVASCRIPT </div>
+		<div class="block" data-id='3'> ES6 </div>
+		<div class="block" data-id='4'> OOP </div>
+		<div class="block" data-id='5'> REACT </div> 
+		<div class="block" data-id='6'> PHP </div> 
+		<div id="info"> <p id="p1"> </p> </div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let sp = document.querySelectorAll(".block"); 
+			let tab = document.querySelector("#tab"); 
+			let p1 = document.querySelector("#p1"); 
+			let q = 0; 
+			let info = document.querySelector("#info"); 
+			function colo() { 
+			let col = 'ABCDEF123456'; 
+			let v = "#"; 
+				for( let i = 0; i < 6; i++ ) { 
+					v += col[Math.floor( Math.random() * 10 )]; 
+				} 
+					return v 
+			} 
+			function f() { 
+				for( let i = 0; i < sp.length; i++ ) { 
+					sp[ i ].style.background = 'white'; 
+					sp[ i ].addEventListener("click", f12 ) 
+				} 
+				sp[ q ].style.background = colo() 
+				q++ 
+				if( q == 7 ) { 
+					q = 0 
+				} 
+			} 
+			function f12( ) { 
+				let t = Number(this.getAttribute("data-id") ) ;  
+				if( t == 0 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML += ' Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.'
+				} 
+				else if( t == 1 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = 'Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.' 
+				} 
+				else if( t == 2 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = ' JavaScript (/ˈdʒɑːvəˌskrɪpt/),[8] often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.[9] JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. ' 
+				} 
+				else if( t == 3 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = ' ECMAScript (/ˈɛkməskrɪpt/) (or ES)[1] is a general-purpose programming language, standardised by Ecma International according to the document ECMA-262. It is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers.[2] ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.' 
+				} 
+				else if( t == 4 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = ' Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and code: data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).' 
+				} 
+				else if( t == 5 ) { 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = ' React (also known as React.js or ReactJS) is an open-source front-end JavaScript library[3] for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies.[4][5][6] React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality' 
+				} 
+				else{ 
+					p1.innerHTML = 'HTML' 
+					info.innerHTML = ' PHP is a general-purpose scripting language especially suited to web development.[5] It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994.[6] The PHP reference implementation is now produced by The PHP Group.[7] PHP originally stood for Personal Home Page,[6] but it now stands for the recursive initialism PHP: Hypertext Preprocessor. ' 
+				} 
+			} 
+			
+			
+			setInterval(f , 1000 ) 
+		</script> 
+	</body> 
+</html> 
+
+ 
+ 

@@ -1,0 +1,128 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#araj{ 
+				width: 244px; 
+				height: 248px; 
+				border: 1px solid black; border-radius: 28px; 
+				margin: 0 auto 
+			} 
+			#cloc{ 
+				width: 100%; 
+				height: 99% 
+				background: black; 
+			} 
+			#j{ 
+				width: 44px; 
+				height: 44px; 
+				background: black; 
+				float: left; font-size: 28px; 
+				color: white; text-align: center; 
+			} 
+			#r{ 
+				width: 44px; 
+				height: 44px; 
+				background: black; float: left; font-size: 28px; 
+				color: white; 
+			} 
+			#v{ 
+				width: 44px; 
+				height: 44px; 
+				background: black; float: left; font-size: 28px; 
+				color: white; 
+			} 
+			#a1{ 
+				width: 14px; 
+				height: 44px; 
+				background: black ; float: left; 
+			} 
+			#a2{ 
+				width: 14px; 
+				height: 44px; 
+				background: black ;
+				float: left; 
+			} 
+			#i{ 
+				font-size: 28px;  
+				text-align: center 
+			} 
+			#o{ 
+				text-align: center ; 
+			} 
+			#dot1, #dot2{ 
+				font-size: 28px; 
+				color: white; 
+			} 
+			
+		</style> 
+		<div id="block"> </div> 
+		
+		<button id="click"> click </button> 
+		<div id="araj"> 
+		<div id="cloc"> 
+			<h1 id="o"> </h1> 
+			<h4 id="i">  </h4>
+			<div id="j"> </div> 
+			<div id="a1"> <span id="dot1"> : </ span > </div> 
+			<div id="r"> </div> 
+			<div id="a2" > <span id="dot2"> : </ span > </div> 
+			<div id="v"> </div> 
+		</div> 
+		</div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let zang = [ 'Կիրակի', 'Երկուշաբթի', 'Երեքշաբթի', 'Չորեքշաբթի', 'Հինգշաբթի', 'Որւբաթ', 'Շաբաթ' ]; 
+			let amis = [ 'Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր' ]; 
+			click.addEventListener("click", f ) 
+			let j = document.querySelector("#j"); 
+			let r = document.querySelector("#r"); 
+			let v = document.querySelector("#v"); 
+			let o = document.querySelector("#o"); 
+			let ss = document.querySelector("#a1"); 
+			let ssss = document.querySelector("#a2"); 
+			let dot1 = document.querySelector("#dot1"); 
+			let dot2 = document.querySelector("#dot2"); 
+			let t = 0; 
+			function f( e ) { 
+				t++ 
+				let d = new Date() 
+				let shabat = d.getDay() 
+				let orer = d.getMonth() 
+				let jam = d.getHours() 
+				let rop = d.getMinutes() 
+				let vvv = d.getSeconds() 
+				
+				if( vvv <= 9 ) { 
+					vvv = '0'+ vvv 
+				} 
+				if( rop <= 9 ) { 
+					rop = '0' + rop 
+				} 
+				o.innerHTML = amis[ orer ] 
+				i.innerHTML = zang[ shabat ] 
+				j.innerHTML = jam+1  
+				r.innerHTML = rop 
+				v.innerHTML = vvv 
+				if( t%2 == 0 ) { 
+					dot1.style.opacity = '0' 
+					dot2.style.opacity = '0' 
+				} 
+				else{ 
+					dot1.style.opacity = '1'; 
+					dot2.style.opacity = '1'; 
+					ss.style.opacity = '1' 
+					ssss.style.opacity = '1' 
+				} 
+			} 
+			setInterval(f, 1000 ) 
+		</script> 
+	</body> 
+</html> 
+
+

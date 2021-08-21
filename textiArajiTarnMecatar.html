@@ -1,0 +1,33 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			
+		</style> 
+		<div id="block"> </div> 
+		<button id="click"> click </button> 
+		
+		<p> Մեր գրած տեքստը կլնի upperCase </p> 
+        <input type="text" id="p"> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			click.addEventListener("click", f ) 
+			let p = document.querySelector("#p"); 
+			let text = 'javascript react oop es6'; 
+			function f() { 
+                let zang = p.value.split(" ") 
+				for(let i = 0; i < zang.length; i++ ) { 
+					let t = zang[i].substr(0,1).toUpperCase() + zang[i].substr(1, zang[i].length) 
+					block.innerHTML += t +' ' 
+                    p.value = '' 
+				} 
+			} 
+		</script> 
+	</body> 
+</html> 
+

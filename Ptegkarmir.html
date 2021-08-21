@@ -1,0 +1,54 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+            #area{ 
+                width: 414px; 
+                border: 1px solid black ; 
+                margin: 0; 
+            } 
+            .name{ 
+                color: blue 
+            } 
+		</style> 
+		
+        <h2 class="name"> եթե սեխմենք տեքստի վրա կփոխի գույնը գրած է երկու ձևով  </h2> 
+        <div id="area"> 
+		<p onclick="f(this)"> JAVASCRIPT </p>
+		<p onclick="f(this)"> ES6 </p> 
+		<p onclick="f(this)"> OOP </p> 
+		<p onclick="f(this)"> REACT </p> 
+		<h4> HTML </h4>
+		<h4> CSS </h4> 
+		<h4> JAVASCRIPT </h4> 
+		<h4> REACT </h4> 
+        </div> 
+		<script>  
+			let p = document.querySelectorAll("p"); 
+			let h = document.querySelectorAll("h4"); 
+//		1 
+			function f(x)  { 
+				for( let i = 0; i < p.length; i++ ) { 
+			 		p[ i ].style.color = 'black' 
+				} 
+				x.style.color = 'red' 
+			} 
+			
+//		2 
+			for( let i = 0; i < h.length; i++ ) { 
+				h[i].addEventListener("click", f2) 
+			} 
+			function f2() { 
+				for( let i = 0; i < h.length; i++ ) { 
+					h[ i ].style.color = 'black'; 
+				} 
+				this.style.color = 'red' 
+			} 
+		</script> 	
+	</body> 
+</html> 
+

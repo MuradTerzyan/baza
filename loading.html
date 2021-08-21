@@ -1,0 +1,76 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#area{ 
+				width: 400px; 
+				height: 280px; 
+				border: 1px solid black; 
+			} 
+			#line{ 
+				width: 250px; 
+				height: 44px; 
+				border: 1px solid black; 
+				position: absolute; 
+				left: 80px ; 
+				top: 140px ; 	text-align: center 
+			} 
+			#qayl{ 
+				width: 250px; 
+				height: 44px; 
+				border: 1px solid black; 
+				text-align: center 
+			} 
+			#area img{ 
+				width: 400px; 
+			} 
+		</style> 
+		<div id="area"> 
+			<div id="line"> 
+				
+				<div id="qayl">  </div> 
+					<p id="p"> 2014 </p> 
+			</div> 
+		</div> 
+
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let area = document.querySelector("#area"); 
+			let line = document.querySelector("#line") 
+			let qayl = document.querySelector("#qayl") 
+			let p = document.querySelector("#p") 
+//			click.addEventListener("click", f ) 
+			let move = 0; 
+			let i = 0; 
+			function f() { 
+				if( move <= 250 ) { 
+					move +=  5 ;  
+				} 
+				qayl.style.width = move + 'px'; 
+				qayl.style.background = 'red' 
+				p.innerHTML = move / 25 * 10 
+				if( move >= 250 ) { 
+					qayl.style.display = 'none' 
+					p.innerHTML = ' Welcome ' 
+					area.style.background = f14( ) 
+				} 
+			} 
+			setInterval(f, 144 ) 
+			function f14() { 
+				let col = 'ABCDEF123456'; 
+				let v = '#'; 
+				for(let i = 0; i < 6; i++ ) { 
+					v += col[Math.floor(Math.random() * col.length )]; 
+				} 
+				console.log( v )  
+				return v 
+			} 
+		</script> 
+	</body> 
+</html> 
+

@@ -1,0 +1,119 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			img{ 
+				width: 144px; 
+				height: 144px; 
+			} 
+		</style> 
+		<button id="click"> տղա </button> 
+		<button id="click2"> աղջիկ </button> 
+		<button id="lriv"> բոլոր </button> 
+		գրեք անուն <input type="text" id="name"> 
+		<div id="block" >		</div> 
+		<table border="1" cellpadding="14" >  
+			<thead> 
+				<td> ՀՀ </td> 
+				<td> Անուն </td> 
+				<td> Ազգանուն </td>
+				<td> Սեռ </td> 
+				<td> Նկար </td> 
+			</thead> 
+			<tbody id="tab"> </tbody> 
+		</table> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let click2 = document.querySelector("#click2"); 
+			let lriv = document.querySelector("#lriv"); 
+			let a = document.querySelectorAll(".a"); 
+			let name = document.querySelector("#name"); 
+			let tab = document.querySelector("#tab"); 
+			name .addEventListener("input", f14 ) 
+			click.addEventListener("click", txa ) 
+			click2.addEventListener("click", axj ) 
+			lriv.addEventListener("click", f ) 
+			let obj = [ 
+				{id:1, anun: 'Առամ', azganun: 'Արամյան' , type: 'արական', nkar: "<img src='foto/b1.jpg'>"  }, 
+				{id:2, anun: 'Գայա', azganun: 'Խաչատրյան' , type: 'իգական',  nkar: "<img src='foto/a1.jpg'>" }, 
+				{id:3, anun: 'Գագո', azganun: 'Մելքոնյան' , type: 'արական', nkar: "<img src='foto/b2.jpg'>" }, 
+				{id:4, anun: 'ինգա', azganun: 'Ստեփանյան' , type: 'իգական', nkar: "<img src='foto/a2.jpg'>" }, 
+				{id:5, anun: 'Տիկո', azganun: 'Բեգլարյան' , type: 'արական', nkar: "<img src='foto/b3.jpg'>" }, 
+				{id:6, anun: 'Նանա', azganun: 'Խանբեկյան' , type: 'իգական', nkar: "<img src='foto/a3.jpg'>" }, 
+				{id:7, anun: 'Զավեն', azganun: 'Գրիգորյան' , type: 'արական', nkar: "<img src='foto/b4.jpg'>" }, 
+				{id:8, anun: 'Քիսո', azganun: 'Ֆառադյան' , type: 'իգական', nkar: "<img src='foto/a4.jpg'>" }, 
+			] 
+			function f() { 
+				tab.innerHTML = '' 
+			obj.map((e) => { 
+				let r = document.createElement("tr"); 
+				r.innerHTML = ` 
+					<td>${e.id} </td> 
+					<td>${e.anun}  </td> 
+					<td>${e.azganun} </td> 
+					<td>${e.type} </td> 
+					<td>${e.nkar} </td> 
+				` 
+				tab.append( r ) 
+			}) 
+			} 
+			f( ) 
+			function f14() { 
+				tab.innerHTML = '' 
+				obj.map((e) => { 
+				if( e.anun.startsWith(name.value) ) { 
+					let r = document.createElement("tr"); 
+					r.innerHTML = ` 
+					<td>${e.id} </td> 
+					<td>${e.anun} </td> 
+					<td>${e.azganun} </td> 
+					<td>${e.type} </td> 
+					<td>${e.nkar} </td> 
+					` 
+					tab.append( r ) 
+				} 
+				}) 
+			} 
+			function txa() { 
+				tab.innerHTML = '' 
+				obj.map((e) => { 
+				if( e.type == 'արական' ) { 
+					let r = document.createElement("tr"); 
+					r.innerHTML = ` 
+					<td>${e.id} </td> 
+					<td>${e.anun} </td> 
+					<td>${e.azganun} </td> 
+					<td>${e.type} </td> 
+					<td>${e.nkar} </td> 
+					` 
+					tab.append( r ) 
+				} 
+				}) 
+			} 
+			function axj() { 
+				tab.innerHTML = '' 
+				obj.map((e) => { 
+				if( e.type == 'իգական' ) { 
+					let r = document.createElement("tr"); 
+					r.innerHTML = ` 
+					<td>${e.id} </td> 
+					<td>${e.anun} </td> 
+					<td>${e.azganun} </td> 
+					<td>${e.type} </td> 
+					<td>${e.nkar} </td> 
+					` 
+					tab.append( r ) 
+				} 
+				}) 
+			} 
+		</script> 
+	</body> 
+</html> 
+
+ 
+ 

@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			span{ 
+				color: red; 
+			} 
+		</style> 
+		<label> մեր գրած բառերը կլնի մեծատառ <input type='text' id='t'> </label> 
+		<div id="block"> </div> 
+		<script> 
+			let t = document.querySelector("#t"); 
+			let block = document.querySelector("#block"); 
+			t.addEventListener("change", f ) 
+			function f() { 
+//					t.value = ' '  
+				let zang = t.value.split(" "); 
+				for( let i = 0; i < zang.length; i++ ) { 
+					
+					let x = zang[i].substr(0, 1).toUpperCase() + zang[i].substr(1, zang[i].length) 
+					block.innerHTML += x + ' ' 
+				} 
+				t.value = ' ' 
+			} 
+		</script> 
+	</body> 
+</html> 
+

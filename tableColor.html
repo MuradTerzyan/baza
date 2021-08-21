@@ -1,0 +1,62 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body id="body"> 
+		<style> 
+            
+		</style> 
+		<button id="click"> + </button> 
+		<div id="div"> </div> 
+        <table border="1" cellpadding="21" >  
+            <tr> 
+                <td> 1 </td> 
+                <td> 1 </td> 
+                <td> 1 </td> 
+            </tr> 
+            <tr> 
+                <td> 2 </td> 
+                <td> 2 </td> 
+                <td> 2 </td> 
+            </tr> 
+            <tr> 
+                <td> 3 </td> 
+                <td> 3 </td> 
+                <td> 3 </td> 
+            </tr> 
+        </table> 
+        
+		<script> 
+            let click = document.querySelector("#click"); 
+            click.addEventListener("click", f14 ) 
+            let tab = document.querySelector("#tab"); 
+            let t = document.querySelectorAll("td"); 
+//            function f() { 
+//                let col = 'ABCDEF123456' 
+//                for( let i = 0; i < t.length; i++ ) { 
+//                    let v = '#'; 
+//                    for( let j = 0; j < 6; j++ ) { 
+//                        v += col[Math.floor( Math.random() * 10 )]; 
+//                        t[i].style.background = v 
+//                    } 
+//                } 
+//            } 
+            function f() { 
+                let col = 'ABCDEF123456' 
+                let v = '#'; 
+                for( let i = 0; i < 6; i++ ) { 
+                    v += col[Math.floor( Math.random() * 10 )]; 
+                } 
+                return v 
+            } 
+            function f14() { 
+                for( let j = 0; j < t.length; j++ ) { 
+                    t[ j ].style.background = f( ) 
+                    t[ j ].innerHTML = f( ) 
+                } 
+            } 
+		</script> 
+	</body>  
+</html> 

@@ -1,0 +1,63 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#list{ 
+				width: 444px; 
+				height: 314px; margin: 0 auto; 
+				border: 1px solid black 
+			} 
+			.l{ 
+				width: 144px; 
+				height: 44px; 
+				background: aqua; border-radius: 28px; 
+			} 
+			#block{ 
+				width: 84px; 
+				height: 144px; margin: 0 auto; 
+			} 
+			#btn{ 
+				position: absolute; 
+				top: 244px;  
+			} 
+		</style> 
+		<div id="list"> 
+			<div id='block'> <img src="l1.gif" id="light"> </div> 
+		<div id="btn"> 	
+		<button id="click1" class="l"> on </button> 
+		<button id="click2" class="l"> of </button> 
+		<button id="click3" class="l"> on/off </button>  
+			</div> 
+		</div> 
+		<script> 
+			let click1 = document.querySelector("#click1"); 
+			let click2 = document.querySelector("#click2"); 
+			let click3 = document.querySelector("#click3"); 
+			click1.addEventListener("click",f1 ) 
+			click2.addEventListener("click",f2 ) 
+			click3.addEventListener("click",f3 ) 
+			let light = document.querySelector("#light"); 
+			let i = 1 ; 
+			function f1( ) { 
+				light.src = 'l2.gif' 
+			} 
+			function f2( ) { 
+				light.src = 'l1.gif' ;  
+			} 
+			function f3( ) { 
+				i++ 
+				if( i%2 == 0 ) { 
+					click3.innerHTML = 'on' 
+					light.src = 'l2.gif' 
+				} else{ 
+					click3.innerHTML = 'of' 
+					light.src = 'l1.gif' 
+				} 
+			} 
+		</script> 
+	</body> 
+</html> 

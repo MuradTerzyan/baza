@@ -1,0 +1,44 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			
+			html, body{ 
+				height: 99%; 
+			} 
+			span{ 
+				color: red; 
+			} 
+
+		</style> 
+		<button id="click"> click </button> 
+		<p id='text'> եթե այստեղ ավելացնեք բառ և այդ բառը լինի տեքստում ապա բառը գույնը կփոխի  </p> 
+		<input type="text" id="inpu" placeholder="LastName" >  
+		<div id="block"> </div>
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let inpu = document.querySelector("#inpu"); 
+			inpu.addEventListener("input", f ) 
+			let text = document.querySelector("#text") ; 
+			let arr2 = text.innerText  
+			function f () { 
+				let arr = arr2.split(' ')  
+				for( let i = 0; i < arr.length; i++ ) { 
+					if( arr[i] == inpu.value ) { 
+						let t = arr.indexOf(inpu.value) 
+						let s = '<span>' + inpu.value + ' </span>'
+						arr.splice(t, 1, s ) 
+						text.innerHTML = arr.join(' ') ; 
+					    inpu.value = '' 
+					} 
+				} 
+			} 
+		</script> 	
+	</body> 
+</html> 
+

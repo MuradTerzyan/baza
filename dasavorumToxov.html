@@ -1,0 +1,53 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			p{ 
+				width: 121px; 
+				height:  44px; 
+				border: 1px solid red; text-align: center ; float: left; 
+			} 
+			h4{ 
+				width: 121px; 
+				height:  44px; 
+				border: 1px solid red; text-align: center  ; float: left; color: green 
+			} 
+		</style> 
+        <span> getAttribute - ի միջոցով դասավորում ենք տեքստ - ը </ span>  
+		<div id="block"> </div>  
+		
+		<div id="lf"> 
+			<p data-a='0'> JavaScript </p> 
+			<p data-a='1'> Es6 </p> 
+			<p data-a='2'> Oop </p> 
+			<p data-a='3'> React </p> 
+		<p data-a='4'>this is javascript</p> 
+		</div> 
+		<div id="ra"> 
+			<h4 data-id='0'> </h4>
+			<h4 data-id='1'> </h4>
+			<h4 data-id='2'> </h4> 
+			<h4 data-id='3'> </h4> 
+			<h4 data-id='4'> </h4> 
+		</div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+//			click.addEventListener("click", f ) 
+			let p = document.querySelectorAll("p") 
+			let h = document.querySelectorAll("h4") 
+			for( let i = 0; i < p.length; i++ ) { 
+				p[i].addEventListener("click", f ) 
+			} 
+			function f() { 
+				let x = this.getAttribute("data-a"); 
+				h[x].innerHTML = this.innerHTML;  
+			} 
+		</script> 
+	</body> 
+</html> 
+

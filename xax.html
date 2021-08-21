@@ -1,0 +1,59 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#c{ 
+				position: absolute; 
+				margin: 14px; 
+			} 
+			#block{ 
+				width: 144px; 
+				height: 144px; 
+			} 
+		</style> 
+        <div> եթե 4 հատ 4 թիվը լինի կհաղթնեք </div> 
+		<button id="click"> rigth </button> 
+		<div id="block"> </div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			click.addEventListener("click", f ) 
+			let t = 0; 
+			function f() { 
+				let c = document.createElement("div"); 
+				c.setAttribute("id", 'c'); 
+				let x = Math.floor(Math.random() * 814 ) 
+				let y = Math.floor(Math.random() * 414 ) 
+				let w = Math.floor(10 + Math.random() * 100 ) 
+				let h = Math.floor(10 + Math.random() * 100 ) 
+				let n = Math.round( 4 + Math.random() * 4 ) 
+				
+				c.style.left = x + 'px'; 
+				c.style.top = y + 'px'; 
+				c.style.background = 'red'; 
+				c.style.width = w + 'px'  
+				c.style.height = h + 'px'  
+				c.innerHTML = n; 
+				if( n == 4 ) { 
+					t++ 
+					c.style.background = 'green' 
+				} 
+				else{ 
+					c.style.background = 'red' 
+				} 
+				if(t == 4 ) { 
+						alert( t ) 
+						block.innerHTML = '' 
+					} 
+				block.append( c ) 
+				console.log( n ) 
+				
+			} 
+		</script> 	
+	</body> 
+</html> 
+

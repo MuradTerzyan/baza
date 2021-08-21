@@ -1,0 +1,80 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#block{ 
+				width: 84%; 
+				height: 214px; 
+				border: 1px solid black; 
+				margin: 0 auto;  
+				display: flex; 
+			} 
+			img{ 
+				width: 25%; 
+				height: 99%; 
+				border: 1px solid black; 
+			} 
+		</style> 
+		<button id="lef"> left </button> 
+		<button id="click"> rigth </button> 
+		<button id="a1"> auto </button> 
+		<div id="block"> 
+			<img> 
+			<img> 
+			<img> 
+			<img> 
+		</div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let imag = document.querySelectorAll("img"); 
+			let lef = document.querySelector("#lef"); 
+			click.addEventListener("click", f1) 
+			lef.addEventListener("click", f2 ) 
+			let zang = ['foto/l1.jpg', 'foto/l2.jpg', 'foto/l3.jpg', 'foto/l4.jpg' ]; 
+			
+			let a1 = document.querySelector("#a1"); 
+			let set 
+			function f() { 
+			for(let i = 0; i < zang.length; i++ ) { 
+				imag[ i ].src = zang[ i ]; 
+			} 
+			} 
+			f( ) 
+			function f1 () { 
+				let x = zang.pop() 
+				zang.unshift( x ) 
+				f( ) 
+			} 
+			function f2( ) { 
+				let x = zang.shift() 
+				zang.push( x ) 
+				f( ) 
+			} 
+			a1.addEventListener("click", f3 ) 
+			let t = 0; 
+			function f3( ) { 
+				t++ 
+				a1.innerHTML = 'st' 
+				if( t % 2 != 0 ) { 
+					set == setInterval(f2, 1000 ) 
+					console.log( t ) 
+				} else{ 
+					a1.innerHTML = 's' 
+					clearInterval( set ) 
+				} 
+			} 
+			for( let j = 0; j < imag.length; j++ ) { 
+				imag[ j ].addEventListener("mousemove", f4 ) 
+			} 
+			function f4( ) { 
+				clearInterval( set ) 
+			} 
+		</script> 	
+	</body> 
+</html> 
+

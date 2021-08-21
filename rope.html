@@ -1,0 +1,102 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#cont{ 
+				width: 440px; 
+				height: 214px; 
+				border: 1px solid black; 
+				position: relative; 
+				margin: 0 auto; 
+			} 
+			#cloc{ 
+				width: 244px; 
+				height: 80px;  
+				margin: 0 auto; border: 1px solid black; text-align: center; border-radius: 49px; color: red 
+			} 
+			.b{ 
+				width: 100px; 
+				height: 44px; 
+				background: green ; 
+				margin: 14px; transition: 1s 
+			} 
+			.b:hover{ 
+				border-radius: 48px; transition: 1s 
+			} 
+		</style> 
+		<div id="block"> </div> 
+		<div id="cont"> 
+			<div id="cloc"> </div> 
+			<button id="b1" class="b"> start </button> 
+			<button id="b2" class="b"> stopp </button> 
+			<button id="b3" class="b"> clear </button> 
+		</div>
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let b1 = document.querySelector("#b1"); 
+			let cloc = document.querySelector("#cloc"); 
+			let b2 = document.querySelector("#b2"); 
+			let b3 = document.querySelector("#b3"); 
+			b1.addEventListener("click", f1 ) 
+			b2.addEventListener("click", f2 ) 
+			b3.addEventListener("click", f3 ) 
+			let cont = document.querySelector("#cont"); 
+			let b = document.querySelectorAll(".b"); 
+			let  set; 
+			let x = 0; 
+			let y = 0; 
+			let z = 0; 
+			cloc.innerHTML = '00.00.00' 
+			function f4() { 
+				console.log( 2014 ) 
+				
+				x++ 
+				if( x >= 10 ) { 
+					x = 0; 
+					y++ 
+				} 
+				if( y >= 10 ) { 
+					y = 0; 
+					z++ 
+				} 
+				if( z > 9 ) { 
+					cloc.innerHTML = z + '.' + '0' + y + '.' + '0' + x; 
+				} else { 
+				cloc.innerHTML = '0'+z +'.'+ '0'+y +'.'+ '0'+x ; 
+			} 
+				cont.style.background = 'blue' 
+			} 
+			function f1() { 
+				set = setInterval(f4, 10 ) 
+			} 
+			function f2() { 
+				clearInterval( set ) 
+				cont.style.background = 'gold' 
+			} 
+			function f3() { 
+				x = 0; 
+				y = 0; 
+				z = 0; 
+				cloc.innerHTML = '00.00.00' 
+				cont.style.background = 'aqua' 
+			} 
+				for( let i = 0; i < b.length ; i++ ) { 
+					b[ i ].addEventListener("click", f5 ) 
+//					this.style.background = 'aqua' 
+				} 
+			function f5( ) { 
+				for( let i = 0; i < b.length ; i++ ) { 
+					b[ i ].style.background = 'green' 
+				} 
+				this.style.background = 'aqua' 
+			} 
+		</script> 
+	</body> 
+</html> 
+
+

@@ -1,0 +1,66 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+            #tiv{ 
+                width: 212px; 
+                height: 244px; 
+                border: 1px solid black ; 
+                text-align: center; 
+                color: red; 
+            } 
+            img{ 
+                width: 100%; 
+            } 
+		</style> 
+        <h4> գրում ենք 1 - ից 2 պատահական թվեր մաքսիմում 10 հատ եթե 4 - հատը ճիշտ լինի ապա մենք կկրենքքք </h4> 
+		<button id="click"> click </button> 
+        <input type="number" id="numb"> 
+		<div id="block"> 
+		</div> 
+        <div id="tiv"> 
+            <p id="a"> </p>
+        </div> 
+        <h4 id='q'> qanak </h4> 
+        <h4 id='m'> miavor </h4> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			let numb = document.querySelector("#numb"); 
+            let tiv = document.querySelector("#tiv"); 
+            let a = document.querySelector("#a"); 
+            let q = document.querySelector("#q "); 
+            let m = document.querySelector("#m "); 
+            click.addEventListener("click", f ) 
+            let qanak = 0 ;  
+            let miavor = 0; 
+                q.innerHTML = 'unem' + 10; 
+            m.innerHTML = 'unem'  + 4 
+            function f() { 
+                if( qanak == 10 ) { 
+                    tiv.innerHTML = `<img src='s.png'> ` 
+                } 
+                if( miavor == 4 ) { 
+                    tiv.innerHTML = `<img src='j.jpg'> ` 
+                } 
+                qanak++ 
+                let x = Math.floor( 1+ Math.random() * 4 ) 
+                if( numb.value == x ) { 
+                    a.innerHTML = '+' + x 
+                    miavor++ 
+                } else{ 
+                    a.innerHTML = x + 0  
+                } 
+                console.log( x ) 
+                numb.value = '' 
+                
+                q.innerHTML = + 11 - qanak; 
+                m.innerHTML =   5 - miavor 
+            } 
+		</script> 	
+	</body> 
+</html> 

@@ -1,0 +1,89 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			#inpu{ 
+				width: 212px; 
+				height: 44px; 
+				border-radius: 21px; 
+				text-align: center; 
+				font-size: 24px ; 
+				background: green; 
+				margin: 14px; 
+			} 
+		</style> 
+		<p> Ֆիլտր 'յան' - ով վերջացող ազգանուններ </p> 
+		<input type="text" id="inpu" placeholder="LastName" >  
+		<table border="1" cellpadding="21" >  
+			<thead> 
+				<td> ID </td>
+				<td> Name </td>
+				<td> LastName </td>
+				<td> Age </td> 
+			</thead> 
+			<tbody id="tab"> </tbody>
+		</table> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let tab = document.querySelector("#tab"); 
+			let inpu = document.querySelector("#inpu"); 
+			inpu.addEventListener("input", f2 ) 
+			let row = ''; 
+			let obj = [ 
+				{id:1, name: 'Arman', lastName: 'Arsenyan', age:12}, 
+				{id:2, name: 'Baris', lastName: 'Beglaryan', age:14}, 
+				{id:3, name: 'Jon', lastName: 'Smit', age:18}, 
+				{id:4, name: 'Leo', lastName: 'Antoni', age:19}, 
+			] 
+			
+			
+			function f () { 
+				tab.innerHTML = '' 
+				obj.map((e) => { 
+					let r = document.createElement("tr"); 
+					r.innerHTML = ` 
+					<td>${e.id}</td> 
+					<td>${e.name}</td> 
+					<td>${e.lastName}</td> 
+					<td>${e.age}</td> 
+					` 
+				tab.append( r ) 
+				}) 
+			} 
+			f( ) 
+//			function f2() { 
+//				tab.innerHTML = '' 
+//				obj.map((e) => { 
+//				if( e.lastName.endsWith(inpu.value) ) { 
+//					let r = document.createElement("tr"); 
+//					r.innerHTML = ` 
+//					<td>${e.age}</td> 
+//					<td>${e.name}</td> 
+//					<td>${e.lastName}</td> 
+//					<td>${e.age}</td> 
+//					` 
+//				tab.append( r ) 
+//				} 
+//				}) 
+//			} 
+			function f2() { 
+				obj.map((e) => { 
+					if(e.lastName.endsWith(inpu.value) ) { 
+						row += `<tr> 
+							<td>${e.age}</td> 
+							<td>${e.name}</td> 
+							<td>${e.lastName}</td> 
+							<td>${e.age}</td> 
+						</tr>` 
+						tab.innerHTML = row; 
+					} 
+				}) 
+			} 
+		</script> 	
+	</body> 
+</html> 
+

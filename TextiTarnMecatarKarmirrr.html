@@ -1,0 +1,36 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <title>Task1</title> 
+        <meta charset="utf-8"> 
+    </head> 
+    <body >   
+		<style> 
+			
+			span{ 
+				color: red; 
+			} 
+
+		</style> 
+        <p> մեր գրած բառը կլնի մեծատառ կարմիրր </p> 
+		<button id="click"> click </button> 
+		<input type="text" id="inpu"> 
+		<div id="block"> </div> 
+		<script> 
+			let block = document.querySelector("#block"); 
+			let click = document.querySelector("#click"); 
+			click.addEventListener("click", f ) 
+			let st = document.querySelector("#inpu"); 
+			st.addEventListener("change", f ) 
+			function f() { 
+				let arr = st.value.split(' ')  
+				for(let i = 0; i < arr.length; i++ ) { 
+					let x = '<span>' + arr[ i ] .substr(0, 1).toUpperCase() +'</span>' + arr[i].substr(1, arr[i].length  )  
+					block.innerHTML += "<p>" + x + "</p>" 
+				} 
+				st.value = ''; 
+			} 
+		</script> 	
+	</body> 
+</html> 
+
